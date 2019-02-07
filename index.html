@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>flaux</title>
+<script type="text/javascript" src="./paper-full.min.js"></script>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100%;
+        min-height: 100vh;
+    }
+    #permutation_grid {
+        width: 66%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        grid-auto-rows: 200px;
+        grid-gap: 0px;
+        overflow: scroll;
+        scroll-behavior: smooth;
+        justify-content: center;
+    }
+    #permutation_grid div {
+        height: 100%;
+        width: 100%;
+        grid-row: auto;
+        grid-column: auto;
+        position: relative;
+    }
+    #permutation_grid div g{
+        /* height: 200px; */
+        /* width: 200px; */
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    #canvas-aside{
+        position: fixed;
+        right: 0;
+        /* background-color: black; */
+        width: 33%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(240,240,255);
+    }
+    #canvas{
+        box-sizing: border-box;
+        z-index: 2;
+        width:200px;
+        height:200px;
+        background-color: white;
+        margin: 10px;
+    }
+</style>
+</head>
+<body>
+    <div id="canvas-aside">
+        <canvas id="canvas" resize></canvas>
+    </div>
+    <section id="permutation_grid"></section>
+    <script type="text/paperscript" src="sketch.js" canvas="canvas"></script>
+</body>
+</html>
